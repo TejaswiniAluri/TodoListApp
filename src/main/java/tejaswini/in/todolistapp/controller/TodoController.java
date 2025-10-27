@@ -19,12 +19,13 @@ public class TodoController {
     private TodoService todoService;
 
     @GetMapping
-    public String listTodos(@RequestParam(required = false) Status status, Model model){
+    public String listTodos(@RequestParam(required=false) Status status, Model model){
         List<Todo> todos;
-        if (status == null) {
-            todos = todoService.getAllTodos();
-        } else {
-            todos = todoService.getTodosByStatus(status);
+        if(status==null){
+            todos=todoService.getAllTodos();
+        }
+        else{
+            todos=todoService.getTodosByStatus(status);
         }
 
         model.addAttribute("todos", todos);
@@ -34,7 +35,7 @@ public class TodoController {
 
     @GetMapping("/new")
     public String showCreateForm(Model model){
-        Todo todo = new Todo();
+        Todo todo=new Todo();
         todo.setCreatedAt(LocalDateTime.now()); // Set timestamp before showing form
         model.addAttribute("todo", todo);
         return "create";

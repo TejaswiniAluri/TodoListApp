@@ -20,10 +20,10 @@
     </style>
 </head>
 <body>
-<!-- Navigation Bar -->
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">📝 Tejaswini's Todo Dashboard</a>
+        <a class="navbar-brand" href="#">📝 Tejaswini's Todo List</a>
     </div>
 </nav>
 
@@ -31,7 +31,7 @@
     <div class="todo-card">
         <h2 class="mb-4 text-center">Your Tasks</h2>
 
-        <!-- Filter Form -->
+
         <form method="get" th:action="@{/todos}" class="row g-3 mb-4">
             <div class="col-md-4">
                 <select name="status" class="form-select">
@@ -54,7 +54,7 @@
             </div>
         </form>
 
-        <!-- Todo Table -->
+
         <table class="table table-hover">
             <thead class="table-light">
             <tr>
